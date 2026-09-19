@@ -24,35 +24,29 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.3/dist/iconify-icon.min.js"></script>
 
-    <!-- Remove this and fill in your name & photo in the required areas -->
-    <script>
-      fetch('https://randomuser.me/api/?inc=name,picture')
-        .then((response) => response.json())
-        .then(({ results }) => results[0])
-        .then(({ name, picture }) => {
-          document.querySelector('#name').innerText = name.first
-          document.querySelector(
-            '.navbar-brand'
-          ).innerText = `${name.first} ${name.last}`
-          document.title = `${name.first} ${name.last} Personal Site`
-          document.querySelector('#profilepic').src = picture.large
-        })
-    </script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Vollkorn:wght@400;500;600&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
 
     <link href="styles/theme.css" rel="stylesheet" />
     <link href="styles/styles.css" rel="stylesheet" />
 
-    <!-- Set Page Title Here -->
-    <title></title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+
+    <title>Thimmy Le | Personal Site</title>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg bg-primary fixed-top">
       <div class="container-fluid p-2 px-lg-2 py-lg-0">
         <!-- Set Name Here -->
-        <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand fw-semibold" href="#">Thimmy Le</a>
         <button
-          class="navbar-toggler bg-white"
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -73,6 +67,11 @@
               >
             </li>
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#gallery"
+                >Gallery</a
+              >
+            </li>
+            <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#courses"
                 >Courses</a
               >
@@ -90,22 +89,42 @@
       class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center pt-5"
       id="home"
     >
-      <div
-        class="rounded-circle border border-3 border-primary p-1 mb-3 mt-0 mt-lg-5"
-      >
-      <!-- Set Photo Here -->
-        <img
-          style="height: 150px; width: 150px"
-          class="rounded-circle"
-          draggable="false"
-          id="profilepic"
-        />
+      <div class="gear-frame mb-3 mt-0 mt-lg-5">
+        <iconify-icon
+          icon="mdi:cog"
+          class="gear-decor gear-decor-1"
+          width="42"
+          height="42"
+        ></iconify-icon>
+        <iconify-icon
+          icon="mdi:cog"
+          class="gear-decor gear-decor-2"
+          width="28"
+          height="28"
+        ></iconify-icon>
+        <div class="rounded-circle border border-3 border-primary p-1">
+          <!-- Set Photo Here -->
+          <img
+            style="height: 150px; width: 150px"
+            class="rounded-circle"
+            draggable="false"
+            id="profilepic"
+            src="https://ui-avatars.com/api/?name=Thimmy+Le&size=300&background=b5651d&color=fff&bold=true"
+            alt="Thimmy Le"
+          />
+        </div>
       </div>
       <div class="row mx-auto">
         <h4 class="h1 font-weight-bold mx-auto text-center">
           <!-- Set Name Here -->
           Hi <iconify-icon icon="twemoji:waving-hand"></iconify-icon> I'm
-          <span id="name"></span>!
+          <span id="name">Thimmy Le</span>!
+          <iconify-icon
+            icon="twemoji:goggles"
+            class="goggles-icon"
+            width="0.85em"
+            height="0.85em"
+          ></iconify-icon>
         </h4>
       </div>
       <div class="row mx-auto">
@@ -113,80 +132,85 @@
           Information Science & Technology Student at Temple University
         </h5>
       </div>
+      <div class="row mx-auto mt-3">
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <span class="badge rounded-pill bg-primary px-3 py-2"
+            >⚙️ Arcade Tinkerer</span
+          >
+          <span class="badge rounded-pill bg-primary px-3 py-2"
+            >🎺 Gramophone Devotee</span
+          >
+          <span class="badge rounded-pill bg-primary px-3 py-2"
+            >☕ Steam-Brewed Coffee</span
+          >
+          <span class="badge rounded-pill bg-primary px-3 py-2"
+            >🦉 Temple Owl</span
+          >
+        </div>
+      </div>
       <div class="row my-4 language-wrapper row-gap-5 col-gap-1 gap-lg-2">
         <div class="col text-center">
-          <img
-            src="images/python.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Python"
-          />
+          <span class="lang-icon" data-bs-toggle="tooltip" data-placement="top" title="Java">
+            <iconify-icon icon="logos:java" width="34" height="34"></iconify-icon>
+          </span>
         </div>
         <div class="col text-center">
-          <img
-            src="images/angular.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Angular"
-          />
+          <span class="lang-icon" data-bs-toggle="tooltip" data-placement="top" title="C#">
+            <iconify-icon icon="logos:c-sharp" width="34" height="34"></iconify-icon>
+          </span>
         </div>
-        <div class="col text-center">
-          <img
-            src="images/typescript.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="TypeScript"
-          />
-        </div>
+      </div>
 
-        <div class="col text-center">
-          <img
-            src="images/csharp.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="C#"
-          />
-        </div>
-        <div class="col text-center">
-          <img
-            src="images/node.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Node.js"
-          />
-        </div>
-        <div class="col text-center">
-          <img
-            src="images/java.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Java"
-          />
-        </div>
-
-        <div class="col text-center">
-          <img
-            src="images/aspnet.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="ASP.NET"
-          />
-        </div>
-        <div class="col text-center">
-          <img
-            src="images/mssql.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Microsoft SQL Server"
-          />
-        </div>
-        <div class="col text-center">
-          <img
-            src="images/mongodb.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="MongoDB"
-          />
+      <div class="row w-100 mt-4 justify-content-center">
+        <div class="col-11 col-lg-8">
+          <h6 class="text-center text-primary text-opacity-75 mb-3">
+            Core Skills
+          </h6>
+          <div class="mb-2">
+            <div class="d-flex justify-content-between">
+              <span>Java</span><span>30%</span>
+            </div>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-label="Java"
+              aria-valuenow="30"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="progress-bar bg-primary" style="width: 30%"></div>
+            </div>
+          </div>
+          <div class="mb-2">
+            <div class="d-flex justify-content-between">
+              <span>C#</span><span>30%</span>
+            </div>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-label="C#"
+              aria-valuenow="30"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="progress-bar bg-primary" style="width: 30%"></div>
+            </div>
+          </div>
+          <div class="mb-2">
+            <div class="d-flex justify-content-between">
+              <span>HTML / CSS</span><span>30%</span>
+            </div>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-label="HTML / CSS"
+              aria-valuenow="30"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="progress-bar bg-primary" style="width: 30%"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -204,54 +228,193 @@
       id="projects"
     >
       <div class="row mx-auto">
-        <h4 class="h1 font-weight-bold mx-auto text-center">Projects</h4>
+        <h4 class="h1 font-weight-bold mx-auto text-center section-title">Projects</h4>
       </div>
       <div class="row mx-auto">
         <h5 class="h5 mx-auto text-opacity-75 text-primary text-center mb-4">
           I've worked on some neat things.
         </h5>
       </div>
-      <div class="row w-100">
-        <h5>Inspiro for Esperanza</h5>
+      <div class="row w-100 g-4 justify-content-center align-items-stretch">
+        <div class="col-11 col-lg-4 d-flex">
+          <div class="card project-card w-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Mechanic Shop</h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary">C#</span>
+                <span class="badge bg-secondary">WinForms</span>
+                <span class="badge bg-secondary">MS Access</span>
+              </div>
+              <p class="card-text text-justify flex-grow-1">
+                A desktop app for managing customers, vehicles, repair
+                orders, and mechanics at a car repair shop. Team project
+                with Edwin — I worked on customer/vehicle management,
+                repair orders, mechanic assignments, authentication, the
+                audit log, and the VIN lookup API integration.
+              </p>
+              <a
+                href="https://github.com/lee-timmi/Mechanic_Shop_04082026"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm align-self-start"
+              >
+                <iconify-icon icon="mdi:github" width="20" height="20"></iconify-icon>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-11 col-lg-4 d-flex">
+          <div class="card project-card w-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Coffee Shop</h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary">C#</span>
+                <span class="badge bg-secondary">Local DB</span>
+              </div>
+              <p class="card-text text-justify flex-grow-1">
+                A lab assignment simulating a coffee shop's ordering
+                system: adding, editing, and deleting menu items and
+                nutrition facts, placing orders against a local database,
+                and pulling up order history.
+              </p>
+              <a
+                href="https://github.com/lee-timmi/Coffee_Shop_03192026"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm align-self-start"
+              >
+                <iconify-icon icon="mdi:github" width="20" height="20"></iconify-icon>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-11 col-lg-4 d-flex">
+          <div class="card project-card featured w-100">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5 class="card-title">Kaimi &mdash; The Seeker</h5>
+                <span class="badge bg-primary">Featured</span>
+              </div>
+              <div class="mb-2">
+                <span class="badge bg-secondary">Go</span>
+                <span class="badge bg-secondary">Multi-agent AI</span>
+              </div>
+              <p class="card-text text-justify flex-grow-1">
+                An autonomous business-development pipeline built at a
+                hackathon over the summer for BlueMeta Technologies. Kaimi
+                hunts live federal contract opportunities on SAM.gov,
+                scores them bid/no-bid against a company's capabilities,
+                and drafts tailored proposals with a human review gate
+                before submission. Built as part of a team.
+              </p>
+              <a
+                href="https://github.com/Mawar2/Kaimi"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm align-self-start"
+              >
+                <iconify-icon icon="mdi:github" width="20" height="20"></iconify-icon>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row w-100 mb-4">
-        <p class="text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus
-          nisi in neque blandit auctor. Vestibulum pellentesque fringilla nulla
-          quis sagittis. Donec id erat sodales, fringilla est non, vestibulum
-          tellus. Suspendisse potenti. Fusce et dolor blandit, tincidunt eros
-          non, pharetra orci. Donec massa neque, suscipit at purus ac, cursus
-          tincidunt purus. Suspendisse imperdiet massa nec sem dictum luctus.
-          Vestibulum at porta lectus, sed faucibus libero.
-        </p>
+      <div class="row mt-3 next">
+        <a href="#gallery" class="col"
+          ><iconify-icon
+            icon="material-symbols:arrow-circle-down"
+            class="arrow-next"
+          ></iconify-icon
+        ></a>
       </div>
-      <div class="row w-100">
-        <h5>Work From Home Pinterest</h5>
+    </div>
+    <div
+      class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center"
+      id="gallery"
+    >
+      <div class="row mx-auto">
+        <h4 class="h1 font-weight-bold mx-auto text-center section-title">Gallery</h4>
       </div>
-      <div class="row w-100 mb-4">
-        <p class="text-justify">
-          Vestibulum vulputate ullamcorper placerat. Fusce bibendum ligula non
-          ex dapibus finibus. Nulla facilisi. Integer eu libero lorem.
-          Pellentesque eget pretium ligula. Donec finibus nibh sed leo dapibus
-          imperdiet. Fusce cursus eu mi sed porttitor. Aliquam eget suscipit
-          dolor, ac mollis risus. Vestibulum commodo turpis nulla, bibendum
-          varius urna dictum porta.
-        </p>
+      <div class="row mx-auto">
+        <h5 class="h5 mx-auto text-opacity-75 text-primary text-center mb-4">
+          A peek at what I'm into outside of code.
+        </h5>
       </div>
-      <div class="row w-100">
-        <h5>Query Dating Site</h5>
-      </div>
-      <div class="row w-100">
-        <p class="text-justify">
-          Fusce egestas lectus ac est porttitor congue. Mauris lacinia pharetra
-          odio ut egestas. Nullam facilisis condimentum consequat. Integer arcu
-          nibh, ullamcorper non fringilla quis, tempus sit amet turpis. Proin ac
-          gravida mi. Ut eros quam, pharetra venenatis pharetra at, porttitor
-          sit amet dolor. Ut et accumsan metus. Phasellus eros diam, tristique a
-          maximus vel, fringilla eu nisl. Pellentesque sed quam non urna dapibus
-          porta in in nibh. Phasellus lobortis nibh est, id pretium orci
-          efficitur at.
-        </p>
+      <div
+        id="hobbyCarousel"
+        class="carousel slide w-100 gallery-frame"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#hobbyCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#hobbyCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+        <div class="carousel-inner rounded shadow">
+          <div class="carousel-item active">
+            <div
+              class="d-flex flex-column justify-content-center align-items-center text-white bg-primary"
+              style="height: 400px"
+            >
+              <iconify-icon
+                icon="twemoji:video-game"
+                width="80"
+                height="80"
+              ></iconify-icon>
+              <h4 class="mt-3 fw-bold">Gaming</h4>
+              <p class="w-75 text-center mb-0">
+                When I'm not coding, I'm probably deep into a game. It's my
+                go-to way to unwind and stay sharp with problem-solving.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="d-flex flex-column justify-content-center align-items-center text-white"
+              style="height: 400px; background-color: var(--bronze-dark)"
+            >
+              <iconify-icon
+                icon="twemoji:musical-notes"
+                width="80"
+                height="80"
+              ></iconify-icon>
+              <h4 class="mt-3 fw-bold">Music</h4>
+              <p class="w-75 text-center mb-0">
+                I'm always listening to something new. Music helps me focus
+                while I work and unwind when I don't.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#hobbyCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#hobbyCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
       <div class="row mt-3 next">
         <a href="#courses" class="col"
@@ -267,7 +430,7 @@
       id="courses"
     >
       <div class="row mx-auto">
-        <h4 class="h1 font-weight-bold mx-auto text-center">Courses</h4>
+        <h4 class="h1 font-weight-bold mx-auto text-center section-title">Courses</h4>
       </div>
       <div class="row mx-auto mb-4">
         <h5 class="h5 mx-auto text-center text-primary text-opacity-75">
@@ -338,7 +501,7 @@
       id="contact"
     >
       <div class="row mx-auto">
-        <h4 class="h1 font-weight-bold mx-auto text-center">
+        <h4 class="h1 font-weight-bold mx-auto text-center section-title">
           Feel Like Reaching Out?
         </h4>
       </div>
@@ -348,7 +511,7 @@
         </h5>
       </div>
       <div class="row my-4 contact-wrapper gap-3">
-        <a href="mailto:johndoe@gmail.com" class="col text-black">
+        <a href="mailto:thaithimmy2003@gmail.com" class="col text-black">
           <iconify-icon
             icon="logos:google-gmail"
             width="60"
@@ -358,7 +521,7 @@
             title="Email"
           ></iconify-icon>
         </a>
-        <a href="https://www.linkedin.com/in/johndoe/" class="col"
+        <a href="https://www.linkedin.com/in/thimmy-le-285844335/" class="col"
           ><iconify-icon
             icon="skill-icons:linkedin"
             width="60"
@@ -368,7 +531,7 @@
             title="LinkedIn"
           ></iconify-icon>
         </a>
-        <a href="https://github.com/johndoe" class="col"
+        <a href="https://github.com/lee-timmi" class="col"
           ><iconify-icon
             icon="skill-icons:github-dark"
             width="60"

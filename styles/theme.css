@@ -1,57 +1,89 @@
 :root {
-    --temple-red-dark: rgb(136, 24, 45);
-    --bs-primary: #88182d;
-    --bs-primary-rgb: 158, 27, 52;
-    --bs-primary-dark: #721426;
-    --bs-primary-dark-rgb: 136, 24, 35;
+    /* Steampunk palette */
+    --copper: #b5651d;
+    --copper-light: #d98f4a;
+    --bronze-dark: #5c3a21;
+    --brass: #c9a227;
+    --brass-light: #e6c15c;
+    --iron: #1c1310;
+    --iron-light: #2b1d14;
+    --parchment: #ede0c8;
+    --parchment-dark: #ddcda9;
+    --ink: #2b1d14;
+    --rivet-ring: #3a2a1c;
 
+    --bs-primary: var(--copper);
+    --bs-primary-rgb: 181, 101, 29;
+    --bs-primary-dark: var(--bronze-dark);
+    --bs-primary-dark-rgb: 92, 58, 33;
 }
 
 .btn-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #88182d;
-    --bs-btn-border-color: #88182d;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #721426;
-    --bs-btn-hover-border-color: #721426;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #721426;
-    --bs-btn-active-border-color: #721426;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #721426;
-    --bs-btn-disabled-border-color: #721426;
+    --bs-btn-color: var(--parchment);
+    --bs-btn-bg: var(--copper);
+    --bs-btn-border-color: var(--brass);
+    --bs-btn-hover-color: var(--parchment);
+    --bs-btn-hover-bg: var(--bronze-dark);
+    --bs-btn-hover-border-color: var(--brass-light);
+    --bs-btn-focus-shadow-rgb: 201, 162, 39;
+    --bs-btn-active-color: var(--parchment);
+    --bs-btn-active-bg: var(--bronze-dark);
+    --bs-btn-active-border-color: var(--brass);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.35);
+    --bs-btn-disabled-color: var(--parchment);
+    --bs-btn-disabled-bg: var(--bronze-dark);
+    --bs-btn-disabled-border-color: var(--bronze-dark);
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, var(--copper-light), var(--copper) 60%, var(--bronze-dark)) !important;
+    border-width: 2px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(180deg, var(--copper), var(--bronze-dark) 70%) !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--copper);
+    --bs-btn-border-color: var(--copper);
+    --bs-btn-hover-color: var(--parchment);
+    --bs-btn-hover-bg: var(--copper);
+    --bs-btn-hover-border-color: var(--brass);
+    --bs-btn-focus-shadow-rgb: 181, 101, 29;
+    --bs-btn-active-color: var(--parchment);
+    --bs-btn-active-bg: var(--copper);
+    --bs-btn-active-border-color: var(--copper);
+    --bs-btn-disabled-color: var(--copper);
+    --bs-btn-disabled-border-color: var(--copper);
 }
 
 .navbar {
-    --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+    --bs-navbar-active-color: var(--brass-light);
     --bs-navbar-padding-x: 0.1rem;
     --bs-navbar-padding-y: 0;
-    --bs-navbar-brand-color: white;
-    --bs-navbar-brand-hover-color: white;
+    --bs-navbar-brand-color: var(--brass-light);
+    --bs-navbar-brand-hover-color: var(--brass-light);
 }
 
+.navbar.bg-primary {
+    background: linear-gradient(180deg, var(--iron-light), var(--iron)) !important;
+    border-bottom: 3px solid var(--brass);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
 
 .navbar-nav {
     --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 1rem;
-    --bs-nav-link-color: white;
-    --bs-nav-link-hover-color: white;
-
+    --bs-nav-link-color: var(--parchment);
+    --bs-nav-link-hover-color: var(--brass-light);
 }
 
-.navbar-nav {
-    --bs-nav-link-color: white;
-    --bs-nav-link-hover-color: white;
+.navbar-toggler {
+    --bs-navbar-toggler-border-color: var(--brass);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(201, 162, 39, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-color: var(--bronze-dark);
 }
-
-/* .btn-primary {
-    background-color: var(--temple-red) !important;
-    border-color: var(--temple-red) !important;
-} */
-
-/* .btn-primary:hover {
-    background-color: var(--temple-red-dark) !important;
-    border-color: var(--temple-red-dark) !important;
-} */
